@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-
-"""Define a class Square."""
+""" Square class - instanciated with size """
 
 
 class Square:
-    """Represent a square."""
-    pass
+    """Square Class with private size"""
+    def __init__(self, size):
+        self.__size = size
