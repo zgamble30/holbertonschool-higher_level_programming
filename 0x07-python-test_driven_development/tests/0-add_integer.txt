@@ -1,0 +1,58 @@
+==================
+Using add_integer
+==================
+
+This function adds two integers and returns the result.
+Parameter b is 98 by default.
+a and b should be integers.
+
+Import `add_integer` from the file `0-add_integer.py`:
+    >>> add_integer = __import__("0-add_integer").add_integer
+
+Numbers
+=========
+
+Two positive input:
+    >>> add_integer(5, 10)
+    15
+
+'a' negative input:
+    >>> add_integer(-5, 10)
+    5
+
+'b' negative input:
+    >>> add_integer(5, -10)
+    -5
+
+Two negative inputs:
+    >>> add_integer(-5, -10)
+    -15
+
+Just one input:
+    >>> add_integer(10)
+    108
+
+Float input:
+    >>> add_integer(2.2, 6)
+    8
+
+Non-Numbers
+=============
+
+'a' not float or int input:
+    >>> add_integer("Hola")
+    Traceback (most recent call last):
+      ...
+    TypeError: a must be an integer
+
+'b' not float or int input:
+    >>> add_integer(24.5, True)
+    Traceback (most recent call last):
+      ...
+    TypeError: b must be an integer
+
+'a' float input:
+    >>> add_integer()
+    Traceback (most recent call last):
+      ...
+    TypeError: add_integer() missing 1 required positional argument: 'a'
