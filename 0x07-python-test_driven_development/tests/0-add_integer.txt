@@ -1,58 +1,38 @@
-==================
-Using add_integer
-==================
+The ``0-add_integer`` module
+============================
 
-This function adds two integers and returns the result.
-Parameter b is 98 by default.
-a and b should be integers.
+Using ``add_integer``
+---------------------
 
-Import `add_integer` from the file `0-add_integer.py`:
+This is an example text file in reStructuredText format. First import
+``add_integer`` from the ``0-add_integer`` module:
+
     >>> add_integer = __import__("0-add_integer").add_integer
 
-Numbers
-=========
+Now use it:
 
-Two positive input:
-    >>> add_integer(5, 10)
+    >>> add_integer(5)
+    103
+    >>> add_integer(10, 5)
     15
-
-'a' negative input:
-    >>> add_integer(-5, 10)
+    >>> add_integer(10, -5)
     5
-
-'b' negative input:
-    >>> add_integer(5, -10)
+    >>> add_integer(-10, 5)
     -5
-
-Two negative inputs:
-    >>> add_integer(-5, -10)
-    -15
-
-Just one input:
-    >>> add_integer(10)
-    108
-
-Float input:
-    >>> add_integer(2.2, 6)
-    8
-
-Non-Numbers
-=============
-
-'a' not float or int input:
-    >>> add_integer("Hola")
+    >>> add_integer(float('inf'), 1)
     Traceback (most recent call last):
-      ...
-    TypeError: a must be an integer
-
-'b' not float or int input:
-    >>> add_integer(24.5, True)
+    OverflowError: cannot convert float infinity to integer
+    >>> add_integer(float("NaN"), 42)
     Traceback (most recent call last):
-      ...
+    ValueError: cannot convert float NaN to integer
+    >>> add_integer(10, "Hello")
+    Traceback (most recent call last):
     TypeError: b must be an integer
-
-'a' float input:
+    >>> add_integer(1.5, 5)
+    6
+    >>> add_integer("hello", 1.5)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
     >>> add_integer()
     Traceback (most recent call last):
-      ...
     TypeError: add_integer() missing 1 required positional argument: 'a'
