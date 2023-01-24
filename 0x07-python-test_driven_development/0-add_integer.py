@@ -1,29 +1,22 @@
 #!/usr/bin/python3
-""" 0-add_integer
-
-   add_integer function
+"""Module 0-add_integer
+    contains add_integer function
 """
 
 
 def add_integer(a, b=98):
-    """add integer function
-
-    Args:
-        a: first integer
-        b: second integer
-
-    Raise:
-        TypeError: a must be an integer
-        Typeerror: b must be an integer
-
-    Returns:
-        sum of two numbers
+    """Function add_integer takes in at-least one int or float arg
+        a: can be a float or int
+        b: can be a float or int or not even given
+        Return: the sum of a and b
     """
-    if type(a) not in [int, float]:
+
+    if not isinstance(a, int) and not isinstance(a, float):
         raise TypeError("a must be an integer")
-    if type(b) not in [int, float]:
+    if not isinstance(b, int) and not isinstance(b, float):
         raise TypeError("b must be an integer")
-
-    a, b = int(a), int(b)
-
+    if isinstance(a, float):
+        a = int(a)
+    if isinstance(b, float):
+        b = int(b)
     return a + b
