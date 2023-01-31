@@ -1,0 +1,46 @@
+The ``1-my_list`` module
+============================
+
+Using ``print_sorted`` from ``MyList`` class
+---------------------
+
+This is an example text file in reStructuredText format. First import ``print_sorted``
+from ``MyList`` from the ``1-my_list`` module:
+
+    >>> MyList = __import__("1-my_list").MyList
+
+Now use it:
+
+    >>> docs = __import__("1-my_list").MyList.__doc__
+	>>> len(docs) > 1
+	True
+
+    >>> li = MyList()
+    >>> li.print_sorted()
+    []
+    >>> li.append(1)
+    >>> li.print_sorted()
+    [1]
+    >>> li.append(4)
+    >>> li.print_sorted()
+    [1, 4]
+    >>> li.append(2)
+    >>> li.print_sorted()
+    [1, 2, 4]
+    >>> li.append(3)
+    >>> li.print_sorted()
+    [1, 2, 3, 4]
+    >>> li.append(5)
+    >>> li.print_sorted()
+    [1, 2, 3, 4, 5]
+    >>> li.append("fsdf")
+    >>> li.print_sorted()
+    Traceback (most recent call last):
+    TypeError: '<' not supported between instances of 'str' and 'int'
+    >>> li = MyList()
+    >>> li.append(4)
+    >>> li.append(3)
+    >>> li.append(2)
+    >>> li.append(1)
+    >>> li.print_sorted()
+    [1, 2, 3, 4]
