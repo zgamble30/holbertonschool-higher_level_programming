@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+#task0
 """ 0-read_file.py
 
     read_file func
