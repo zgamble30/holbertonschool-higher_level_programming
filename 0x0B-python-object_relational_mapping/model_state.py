@@ -1,5 +1,5 @@
-
-del_state.py
+#!/usr/bin/python3
+"""model_state.py
 
     contains the class definition of a State
     and an instance Base = declarative_base()
