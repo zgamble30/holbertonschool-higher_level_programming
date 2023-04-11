@@ -1,8 +1,2 @@
 #!/usr/bin/node
-// Prints the first argument passed to it
-const arg = process.argv.slice(2);
-if (!arg[0]) {
-  console.log('No argument');
-} else {
-  console.log(arg[0]);
-}
+console.log(typeof process.argv[2] === 'undefined' ? 'No argument' : process.argv[2]);
